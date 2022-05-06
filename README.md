@@ -9,6 +9,7 @@
  ---
  ### Features
  This project used ```Bitmap``` and ```Graphics.CopyFromScreen``` to capture the screen live
+ V1.2.4 is updated version but it is not completed. You can't use it yet
  
  ### Added
  * HEX
