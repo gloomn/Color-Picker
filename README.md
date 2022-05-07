@@ -4,7 +4,7 @@
 ![GitHub](https://img.shields.io/github/languages/top/gloomn/Color-Picker)
 ![GitHub](https://img.shields.io/github/languages/code-size/gloomn/Color-Picker)
 ---
- C# Windows form으로 작성된 색깔 추출 애플리케이션
+ Color Picker Program written with C# Windows Form
  
  ---
  ### Features
