@@ -4,15 +4,15 @@
 ![GitHub](https://img.shields.io/github/languages/top/gloomn/Color-Picker)
 ![GitHub](https://img.shields.io/github/languages/code-size/gloomn/Color-Picker)
 ---
- Color Picker Program written with C# Windows Form
+ C# Windows Form으로 작성된 색 추출 프로그램
  
  ---
  ### Features
  * This project used ```Bitmap``` and ```Graphics.CopyFromScreen``` to capture the screen live
- * V1.2.4 is updated version but it is not completed. You can't use it yet
+ * 1.2.4버전은 아직 개발중입니다.
  
  ### If the file doesn't open
-If visual studio has a error like
+비쥬얼 스튜디오에 다음과 같은 오류가 떴을 때
 * ```인터넷 또는 제한 영역에 있거나 파일에 웹 마크가있어 파일 resx를 처리 할 수 없습니다.```
 * ```Couldn't process file resx due to its being in the Internet or Restricted zone or having the mark of the web on the file. Remove the mark of the web if you want to process these files.```
 
@@ -20,13 +20,9 @@ If visual studio has a error like
 
 가장 간단한 해결 방법은 Windows 탐색기에서 파일을 마우스 오른쪽 단추로 클릭하고 속성을 선택한 다음이 대화 상자 하단에 “차단 해제”옵션이 있어야합니다. 변경 사항을 적용하려면 확인을 클릭해야합니다.
 
-If you have downloaded files from the internet either individually or inside a .zip file or similar, they may have been flagged as coming from the internet zone and “locked down”. Many programs use this as a signal that the content cannot be trusted.
-
-The simplest workaround is to right click on the file in windows explorer, select properties and there should be an "unblock" option at the bottom of this dialog. You must click OK to apply the changes.
-
 <img src="https://user-images.githubusercontent.com/86612194/167292555-df35b2ad-a5c4-4116-aae5-ea0f3a0d1cc5.png" width = "80%" hegiht = "80%">
 <img src = "https://user-images.githubusercontent.com/86612194/167292640-adc5351f-070d-4b14-a6ff-32a3e035bc69.png">
-* After this progress, you can use file normally
+* 차단 해제를 하시면 정상적으로 사용 가능할 것입니다.
  
  ### Added
  * HEX
