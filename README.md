@@ -31,7 +31,7 @@
 
 ### Screen Shot
 * 일반모드
-![image](https://user-images.githubusercontent.com/86612194/166908233-0f3134f0-8856-424d-9b9a-fca2301859a4.png)
+* ![image](https://user-images.githubusercontent.com/86612194/166908233-0f3134f0-8856-424d-9b9a-fca2301859a4.png)
 
 * 다크모드
 * ![image](https://user-images.githubusercontent.com/86612194/167293299-e9e64f03-a0a6-4406-9fc2-b1780782eba8.png)
