@@ -18,6 +18,7 @@ namespace Color_Picker
         int mov;
         int movX;
         int movY;
+        List<Color> RecentColors = new List<Color>();
         public mainForm()
         {
             InitializeComponent();
@@ -60,6 +61,27 @@ namespace Color_Picker
             mov = 0;
         }
 
+        private Color hexToRGB(string hex)
+        {
+            int red = 0;
+            int green = 0;
+            int blue = 0;
+            if (hex.Length == 6)
+            {
+                //#RRGGBB
+                red = int.Parse(hex.Substring(0, 2), NumberStyles.AllowHexSpecifier);
+                green = int.Parse(hex.Substring(2, 2), NumberStyles.AllowHexSpecifier);
+                blue = int.Parse(hex.Substring(4, 2), NumberStyles.AllowHexSpecifier);
+            }
+            else if (hex.Length == 3)
+            {
+                //#RGB
+                red = int.Parse(hex[0].ToString() + hex[0].ToString(), NumberStyles.AllowHexSpecifier);
+                green = int.Parse(hex[1].ToString() + hex[1].ToString(), NumberStyles.AllowHexSpecifier);
+                blue = int.Parse(hex[2].ToString() + hex[2].ToString(), NumberStyles.AllowHexSpecifier);
+            }
+            return Color.FromArgb(red, green, blue);
+        }
         private void screen_timer_Tick(object sender, EventArgs e)
         {
             Size size = new Size(screen.Width, screen.Height);
@@ -174,15 +196,8 @@ namespace Color_Picker
                 int y = mousePoint.Y;
                 Color color = GetMousePointColor(mousePoint);
                 SetColor(x, y, color);
-                if (colorFormatCombo.SelectedIndex == 0)
-                {
-                    color_list.Items.Add(hexcode.Text);
-                }
-                else if(colorFormatCombo.SelectedIndex == 1)
-                {
-                    
-                    color_list.Items.Add("1");
-                }
+                RecentColors.Add(hexToRGB(hexcode.Text));
+                color_list.Items.Add(RecentColors);
                 this.color_list.DrawItem += color_list_DrawItem;
             }
         }
@@ -314,25 +329,10 @@ namespace Color_Picker
 
             if (sel == 1)
             {
-                int red = 0;
-                int green = 0;
-                int blue = 0;
-                selected_hexcode.Text = color_list.SelectedItem.ToString();
-                if (selected_hexcode.Text.Length == 6)
+                for(int i = 0; i < RecentColors.Count; i++)
                 {
-                    //#RRGGBB
-                    red = int.Parse(selected_hexcode.Text.Substring(0, 2), NumberStyles.AllowHexSpecifier);
-                    green = int.Parse(selected_hexcode.Text.Substring(2, 2), NumberStyles.AllowHexSpecifier);
-                    blue = int.Parse(selected_hexcode.Text.Substring(4, 2), NumberStyles.AllowHexSpecifier);
+                    RecentColors[i] = RecentColors[i];
                 }
-                else if (selected_hexcode.Text.Length == 3)
-                {
-                    //#RGB
-                    red = int.Parse(selected_hexcode.Text[0].ToString() + selected_hexcode.Text[0].ToString(), NumberStyles.AllowHexSpecifier);
-                    green = int.Parse(selected_hexcode.Text[1].ToString() + selected_hexcode.Text[1].ToString(), NumberStyles.AllowHexSpecifier);
-                    blue = int.Parse(selected_hexcode.Text[2].ToString() + selected_hexcode.Text[2].ToString(), NumberStyles.AllowHexSpecifier);
-                }
-                selected_hexcode.Text = red+ "," + green+ "," + blue;
             }
         }
     }
