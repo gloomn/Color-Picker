@@ -15,6 +15,9 @@ namespace Color_Picker
 {
     public partial class mainForm : Form
     {
+        int mov;
+        int movX;
+        int movY;
         public mainForm()
         {
             InitializeComponent();
@@ -25,6 +28,36 @@ namespace Color_Picker
             rScroll.Maximum = 255;
             gScroll.Maximum = 255;
             bScroll.Maximum = 255;
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                var cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+        private void mainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            mov = 1;
+            movX = e.X;
+            movY = e.Y;
+        }
+
+        private void mainForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
+        }
+
+        private void mainForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = 0;
         }
 
         private void screen_timer_Tick(object sender, EventArgs e)
@@ -57,10 +90,10 @@ namespace Color_Picker
         {
             var g = e.Graphics;
 
-            g.DrawLine(Pens.Red, 0, 0, 100, 0);
-            g.DrawLine(Pens.Red, 0, 0, 0, 100);
-            g.DrawLine(Pens.Red, 0, 49, 99, 49);
-            g.DrawLine(Pens.Red, 99, 0, 99, 99);
+            g.DrawLine(Pens.Red, 0, 0, screen_color.Size.Width, 0);
+            g.DrawLine(Pens.Red, 0, 0, 0, screen_color.Size.Width);
+            g.DrawLine(Pens.Red, 0, screen_color.Size.Height - 1, screen_color.Size.Width-1, screen_color.Size.Height-1);
+            g.DrawLine(Pens.Red, screen_color.Size.Width - 1, 0, screen_color.Size.Width-1, screen_color.Size.Width-1);
         }
 
         private delegate void SetColorDelegate(int x, int y, Color color);
@@ -141,7 +174,15 @@ namespace Color_Picker
                 int y = mousePoint.Y;
                 Color color = GetMousePointColor(mousePoint);
                 SetColor(x, y, color);
-                color_list.Items.Add(hexcode.Text);
+                if (colorFormatCombo.SelectedIndex == 0)
+                {
+                    color_list.Items.Add(hexcode.Text);
+                }
+                else if(colorFormatCombo.SelectedIndex == 1)
+                {
+                    
+                    color_list.Items.Add("1");
+                }
                 this.color_list.DrawItem += color_list_DrawItem;
             }
         }
@@ -228,10 +269,10 @@ namespace Color_Picker
         {
             var g = e.Graphics;
 
-            g.DrawLine(Pens.Red, 0, 0, 100, 0);
-            g.DrawLine(Pens.Red, 0, 0, 0, 100);
-            g.DrawLine(Pens.Red, 0, 49, 99, 49);
-            g.DrawLine(Pens.Red, 99, 0, 99, 99);
+            g.DrawLine(Pens.Red, 0, 0, selected_color.Size.Width, 0);
+            g.DrawLine(Pens.Red, 0, 0, 0, selected_color.Size.Width);
+            g.DrawLine(Pens.Red, 0, selected_color.Size.Height - 1, selected_color.Size.Width - 1, selected_color.Size.Height - 1);
+            g.DrawLine(Pens.Red, selected_color.Size.Width - 1, 0, selected_color.Size.Width - 1, selected_color.Size.Width - 1);
         }
 
         private void copy_color_Click(object sender, EventArgs e)
@@ -260,6 +301,39 @@ namespace Color_Picker
         private void githubToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/gloomn/Color-Picker");
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void colorFormatCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int sel = colorFormatCombo.SelectedIndex;
+
+            if (sel == 1)
+            {
+                int red = 0;
+                int green = 0;
+                int blue = 0;
+                selected_hexcode.Text = color_list.SelectedItem.ToString();
+                if (selected_hexcode.Text.Length == 6)
+                {
+                    //#RRGGBB
+                    red = int.Parse(selected_hexcode.Text.Substring(0, 2), NumberStyles.AllowHexSpecifier);
+                    green = int.Parse(selected_hexcode.Text.Substring(2, 2), NumberStyles.AllowHexSpecifier);
+                    blue = int.Parse(selected_hexcode.Text.Substring(4, 2), NumberStyles.AllowHexSpecifier);
+                }
+                else if (selected_hexcode.Text.Length == 3)
+                {
+                    //#RGB
+                    red = int.Parse(selected_hexcode.Text[0].ToString() + selected_hexcode.Text[0].ToString(), NumberStyles.AllowHexSpecifier);
+                    green = int.Parse(selected_hexcode.Text[1].ToString() + selected_hexcode.Text[1].ToString(), NumberStyles.AllowHexSpecifier);
+                    blue = int.Parse(selected_hexcode.Text[2].ToString() + selected_hexcode.Text[2].ToString(), NumberStyles.AllowHexSpecifier);
+                }
+                selected_hexcode.Text = red+ "," + green+ "," + blue;
+            }
         }
     }
 }

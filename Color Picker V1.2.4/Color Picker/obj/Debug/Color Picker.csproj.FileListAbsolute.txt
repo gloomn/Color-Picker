@@ -31,3 +31,16 @@ D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Colo
 D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color Picker V1.0.0\Color Picker\obj\Debug\Color Picker.csproj.CoreCompileInputs.cache
 D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color Picker V1.0.0\Color Picker\obj\Debug\Color Picker.exe
 D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color Picker V1.0.0\Color Picker\obj\Debug\Color Picker.pdb
+D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color-Picker\Color Picker V1.2.4\Color Picker\obj\Debug\Color Picker.csproj.AssemblyReference.cache
+D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color-Picker\Color Picker V1.2.4\Color Picker\obj\Debug\Color Picker.csproj.SuggestedBindingRedirects.cache
+D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color-Picker\Color Picker V1.2.4\Color Picker\obj\Debug\Color Picker.exe
+D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color-Picker\Color Picker V1.2.4\Color Picker\obj\Debug\Color Picker.pdb
+D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color-Picker\Color Picker V1.2.4\Color Picker\bin\Debug\Color Picker.exe.config
+D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color-Picker\Color Picker V1.2.4\Color Picker\bin\Debug\Color Picker.exe
+D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color-Picker\Color Picker V1.2.4\Color Picker\bin\Debug\Color Picker.pdb
+D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color-Picker\Color Picker V1.2.4\Color Picker\bin\Debug\Guna.UI2.dll
+D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color-Picker\Color Picker V1.2.4\Color Picker\obj\Debug\Color_Picker.mainForm.resources
+D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color-Picker\Color Picker V1.2.4\Color Picker\obj\Debug\Color_Picker.Properties.Resources.resources
+D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color-Picker\Color Picker V1.2.4\Color Picker\obj\Debug\Color Picker.csproj.GenerateResource.cache
+D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color-Picker\Color Picker V1.2.4\Color Picker\obj\Debug\Color Picker.csproj.CoreCompileInputs.cache
+D:\WorkSpace\C#\Color Picker\Winform Color Picker\Color Picker\Color-Picker\Color-Picker\Color Picker V1.2.4\Color Picker\obj\Debug\Color Picker.csproj.CopyComplete
