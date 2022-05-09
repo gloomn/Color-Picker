@@ -18,7 +18,8 @@ namespace Color_Picker
         int mov;
         int movX;
         int movY;
-        List<Color> RecentColors = new List<Color>();
+        List<String> RecentColors = new List<String>();
+        string item;
         public mainForm()
         {
             InitializeComponent();
@@ -61,7 +62,7 @@ namespace Color_Picker
             mov = 0;
         }
 
-        private Color hexToRGB(string hex)
+        private string hexToRGB(string hex)
         {
             int red = 0;
             int green = 0;
@@ -80,7 +81,7 @@ namespace Color_Picker
                 green = int.Parse(hex[1].ToString() + hex[1].ToString(), NumberStyles.AllowHexSpecifier);
                 blue = int.Parse(hex[2].ToString() + hex[2].ToString(), NumberStyles.AllowHexSpecifier);
             }
-            return Color.FromArgb(red, green, blue);
+            return (red + ","+green + "," + blue);
         }
         private void screen_timer_Tick(object sender, EventArgs e)
         {
@@ -187,6 +188,7 @@ namespace Color_Picker
             }
         }
 
+        //Key Pressed Event
         private void mainForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.C)
@@ -196,9 +198,16 @@ namespace Color_Picker
                 int y = mousePoint.Y;
                 Color color = GetMousePointColor(mousePoint);
                 SetColor(x, y, color);
-                RecentColors.Add(hexToRGB(hexcode.Text));
-                color_list.Items.Add(RecentColors);
-                this.color_list.DrawItem += color_list_DrawItem;
+                if(colorFormatCombo.SelectedIndex == 0)
+                {
+                    item = hexcode.Text;
+                }
+                else if(colorFormatCombo.SelectedIndex == 1)
+                {
+                    item = hexToRGB(hexcode.Text);
+                }
+                RecentColors.Add(item);
+                color_list.Items.Add(item);
             }
         }
         
@@ -248,6 +257,7 @@ namespace Color_Picker
             
         }
 
+        //RGB Indexing Error
         private void color_list_MouseClick(object sender, MouseEventArgs e)
         {
             if (color_list.SelectedItem != null) 
@@ -270,6 +280,7 @@ namespace Color_Picker
                     green = int.Parse(selected_hexcode.Text[1].ToString() + selected_hexcode.Text[1].ToString(), NumberStyles.AllowHexSpecifier);
                     blue = int.Parse(selected_hexcode.Text[2].ToString() + selected_hexcode.Text[2].ToString(), NumberStyles.AllowHexSpecifier);
                 }
+
                 selected_color.BackColor = Color.FromArgb(red, green, blue);
                 selected_R.Text = "R: " + red.ToString();
                 selected_G.Text = "G: " + green.ToString();
@@ -329,10 +340,6 @@ namespace Color_Picker
 
             if (sel == 1)
             {
-                for(int i = 0; i < RecentColors.Count; i++)
-                {
-                    RecentColors[i] = RecentColors[i];
-                }
             }
         }
     }
