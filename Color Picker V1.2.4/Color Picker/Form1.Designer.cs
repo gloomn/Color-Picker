@@ -384,9 +384,6 @@
             this.colorFormatCombo.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.colorFormatCombo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.colorFormatCombo.ItemHeight = 30;
-            this.colorFormatCombo.Items.AddRange(new object[] {
-            "HTML",
-            "RGB"});
             this.colorFormatCombo.Location = new System.Drawing.Point(23, 144);
             this.colorFormatCombo.Name = "colorFormatCombo";
             this.colorFormatCombo.Size = new System.Drawing.Size(143, 36);

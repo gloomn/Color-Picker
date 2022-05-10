@@ -30,6 +30,9 @@ namespace Color_Picker
             rScroll.Maximum = 255;
             gScroll.Maximum = 255;
             bScroll.Maximum = 255;
+            this.colorFormatCombo.Items.Add(new ComboBoxItem { Rgb = true });
+            this.colorFormatCombo.Items.Add(new ComboBoxItem { Rgb = false });
+            colorFormatCombo.SelectedIndex = 0;
         }
 
         protected override CreateParams CreateParams
@@ -188,30 +191,6 @@ namespace Color_Picker
             }
         }
 
-        //Key Pressed Event
-        private void mainForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.C)
-            {
-                Point mousePoint = Control.MousePosition;
-                int x = mousePoint.X;
-                int y = mousePoint.Y;
-                Color color = GetMousePointColor(mousePoint);
-                SetColor(x, y, color);
-                if(colorFormatCombo.SelectedIndex == 0)
-                {
-                    item = hexcode.Text;
-                }
-                else if(colorFormatCombo.SelectedIndex == 1)
-                {
-                    item = hexToRGB(hexcode.Text);
-                }
-                RecentColors.Add(item);
-                color_list.Items.Add(item);
-            }
-        }
-        
-
         private void 화면모드ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (화면모드ToolStripMenuItem.Checked == false)
@@ -257,6 +236,54 @@ namespace Color_Picker
             
         }
 
+        private void mainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.C)
+            {
+                Point mousePoint = Control.MousePosition;
+                int x = mousePoint.X;
+                int y = mousePoint.Y;
+                Color color = GetMousePointColor(mousePoint);
+                SetColor(x, y, color);
+                if (colorFormatCombo.SelectedIndex == 0)
+                {
+                    item = hexcode.Text;
+                }
+                else if (colorFormatCombo.SelectedIndex == 1)
+                {
+                    item = hexToRGB(hexcode.Text);
+                }
+                RecentColors.Add(item);
+                this.color_list.Items.Add(new ListBoxItem { Rgb = true, Color = ColorTranslator.FromHtml(hexToRGB(hexcode.Text)) });
+            }
+        }
+
+        public class ComboBoxItem
+        {
+            public bool Rgb { get; set; }
+
+            public override string ToString()
+            {
+                // Text to show in ComboBox
+                return this.Rgb ? "RGB" : "HTML";
+            }
+        }
+
+        public class ListBoxItem
+        {
+            public bool Rgb { get; set; }
+
+            public Color Color { get; set; }
+
+            public override string ToString()
+            {
+                // Text to show in ListBox
+                return this.Rgb ?
+                    $"{this.Color.R},{this.Color.G},{this.Color.B}" :
+                    $"{this.Color.R:X2}{this.Color.G:X2}{this.Color.B:X2}";
+            }
+        }
+
         //RGB Indexing Error
         private void color_list_MouseClick(object sender, MouseEventArgs e)
         {
@@ -291,6 +318,18 @@ namespace Color_Picker
             }
         }
 
+        private void colorFormatCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var comboBoxItem = (ComboBoxItem)this.colorFormatCombo.SelectedItem;
+            for (int i = 0; i < this.color_list.Items.Count; i++)
+            {
+                var item = (ListBoxItem)this.color_list.Items[i];
+                item.Rgb = comboBoxItem.Rgb;
+
+                // To force redraw
+                color_list.Items[i] = color_list.Items[i];
+            }
+        }
         private void selected_color_Paint(object sender, PaintEventArgs e)
         {
             var g = e.Graphics;
@@ -334,13 +373,6 @@ namespace Color_Picker
             Application.Exit();
         }
 
-        private void colorFormatCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int sel = colorFormatCombo.SelectedIndex;
-
-            if (sel == 1)
-            {
-            }
-        }
+        
     }
 }
