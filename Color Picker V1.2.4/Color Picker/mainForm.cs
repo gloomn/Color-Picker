@@ -20,6 +20,7 @@ namespace Color_Picker
         int movY;
         List<String> RecentColors = new List<String>();
         string item;
+
         public mainForm()
         {
             InitializeComponent();
@@ -30,8 +31,8 @@ namespace Color_Picker
             rScroll.Maximum = 255;
             gScroll.Maximum = 255;
             bScroll.Maximum = 255;
-            this.colorFormatCombo.Items.Add(new ComboBoxItem { Rgb = true });
             this.colorFormatCombo.Items.Add(new ComboBoxItem { Rgb = false });
+            this.colorFormatCombo.Items.Add(new ComboBoxItem { Rgb = true });
             colorFormatCombo.SelectedIndex = 0;
         }
 
@@ -248,13 +249,14 @@ namespace Color_Picker
                 if (colorFormatCombo.SelectedIndex == 0)
                 {
                     item = hexcode.Text;
+                    this.color_list.Items.Add(new ListBoxItem { Rgb = false, Color = ColorTranslator.FromHtml(hexToRGB(hexcode.Text)) });
                 }
                 else if (colorFormatCombo.SelectedIndex == 1)
                 {
                     item = hexToRGB(hexcode.Text);
+                    this.color_list.Items.Add(new ListBoxItem { Rgb = true, Color = ColorTranslator.FromHtml(hexToRGB(hexcode.Text)) });
                 }
                 RecentColors.Add(item);
-                this.color_list.Items.Add(new ListBoxItem { Rgb = true, Color = ColorTranslator.FromHtml(hexToRGB(hexcode.Text)) });
             }
         }
 
@@ -292,6 +294,7 @@ namespace Color_Picker
                 int red = 0;
                 int green = 0;
                 int blue = 0;
+
                 selected_hexcode.Text = color_list.SelectedItem.ToString();
                 if (selected_hexcode.Text.Length == 6)
                 {
@@ -307,7 +310,14 @@ namespace Color_Picker
                     green = int.Parse(selected_hexcode.Text[1].ToString() + selected_hexcode.Text[1].ToString(), NumberStyles.AllowHexSpecifier);
                     blue = int.Parse(selected_hexcode.Text[2].ToString() + selected_hexcode.Text[2].ToString(), NumberStyles.AllowHexSpecifier);
                 }
-
+                else
+                {
+                    string color = selected_hexcode.Text;
+                    string[] sHexcode = color.Split(new char[] { ',' });
+                    red = Int32.Parse(sHexcode[0]);
+                    green = Int32.Parse(sHexcode[1]);
+                    blue = Int32.Parse(sHexcode[2]);
+                }
                 selected_color.BackColor = Color.FromArgb(red, green, blue);
                 selected_R.Text = "R: " + red.ToString();
                 selected_G.Text = "G: " + green.ToString();
