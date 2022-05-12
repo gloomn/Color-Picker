@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Color_Picker
@@ -85,7 +81,7 @@ namespace Color_Picker
                 green = int.Parse(hex[1].ToString() + hex[1].ToString(), NumberStyles.AllowHexSpecifier);
                 blue = int.Parse(hex[2].ToString() + hex[2].ToString(), NumberStyles.AllowHexSpecifier);
             }
-            return (red + ","+green + "," + blue);
+            return (red + "," + green + "," + blue);
         }
         private void screen_timer_Tick(object sender, EventArgs e)
         {
@@ -119,8 +115,8 @@ namespace Color_Picker
 
             g.DrawLine(Pens.Red, 0, 0, screen_color.Size.Width, 0);
             g.DrawLine(Pens.Red, 0, 0, 0, screen_color.Size.Width);
-            g.DrawLine(Pens.Red, 0, screen_color.Size.Height - 1, screen_color.Size.Width-1, screen_color.Size.Height-1);
-            g.DrawLine(Pens.Red, screen_color.Size.Width - 1, 0, screen_color.Size.Width-1, screen_color.Size.Width-1);
+            g.DrawLine(Pens.Red, 0, screen_color.Size.Height - 1, screen_color.Size.Width - 1, screen_color.Size.Height - 1);
+            g.DrawLine(Pens.Red, screen_color.Size.Width - 1, 0, screen_color.Size.Width - 1, screen_color.Size.Width - 1);
         }
 
         private delegate void SetColorDelegate(int x, int y, Color color);
@@ -211,6 +207,10 @@ namespace Color_Picker
                 selected_R.ForeColor = Color.White;
                 selected_G.ForeColor = Color.White;
                 selected_B.ForeColor = Color.White;
+                mainPanel.FillColor = Color.FromArgb(50, 50, 50);
+                mainPanel.FillColor2 = Color.FromArgb(50, 50, 50);
+                mainPanel.FillColor3 = Color.FromArgb(50, 50, 50);
+                mainPanel.FillColor4 = Color.FromArgb(50, 50, 50);
             }
             else
             {
@@ -229,12 +229,16 @@ namespace Color_Picker
                 selected_R.ForeColor = Color.Black;
                 selected_G.ForeColor = Color.Black;
                 selected_B.ForeColor = Color.Black;
+                mainPanel.FillColor = Color.White;
+                mainPanel.FillColor2 = Color.White;
+                mainPanel.FillColor3 = Color.White;
+                mainPanel.FillColor4 = Color.White;
             }
         }
 
         private void color_list_DrawItem(object sender, DrawItemEventArgs e)
         {
-            
+
         }
 
         private void mainForm_KeyDown(object sender, KeyEventArgs e)
@@ -262,7 +266,11 @@ namespace Color_Picker
 
         public class ComboBoxItem
         {
-            public bool Rgb { get; set; }
+            public bool Rgb
+            {
+                get;
+                set;
+            }
 
             public override string ToString()
             {
@@ -273,7 +281,11 @@ namespace Color_Picker
 
         public class ListBoxItem
         {
-            public bool Rgb { get; set; }
+            public bool Rgb
+            {
+                get;
+                set;
+            }
 
             public Color Color { get; set; }
 
@@ -289,7 +301,7 @@ namespace Color_Picker
         //RGB Indexing Error
         private void color_list_MouseClick(object sender, MouseEventArgs e)
         {
-            if (color_list.SelectedItem != null) 
+            if (color_list.SelectedItem != null)
             {
                 int red = 0;
                 int green = 0;
@@ -335,7 +347,6 @@ namespace Color_Picker
             {
                 var item = (ListBoxItem)this.color_list.Items[i];
                 item.Rgb = comboBoxItem.Rgb;
-
                 // To force redraw
                 color_list.Items[i] = color_list.Items[i];
             }
@@ -383,6 +394,6 @@ namespace Color_Picker
             Application.Exit();
         }
 
-        
+
     }
 }

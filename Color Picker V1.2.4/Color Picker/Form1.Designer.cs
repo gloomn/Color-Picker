@@ -131,7 +131,7 @@
             this.xPosition.AutoSize = true;
             this.xPosition.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xPosition.ForeColor = System.Drawing.Color.Black;
-            this.xPosition.Location = new System.Drawing.Point(116, 90);
+            this.xPosition.Location = new System.Drawing.Point(107, 90);
             this.xPosition.Name = "xPosition";
             this.xPosition.Size = new System.Drawing.Size(19, 17);
             this.xPosition.TabIndex = 3;
@@ -142,7 +142,7 @@
             this.yPosition.AutoSize = true;
             this.yPosition.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yPosition.ForeColor = System.Drawing.Color.Black;
-            this.yPosition.Location = new System.Drawing.Point(117, 107);
+            this.yPosition.Location = new System.Drawing.Point(108, 107);
             this.yPosition.Name = "yPosition";
             this.yPosition.Size = new System.Drawing.Size(19, 17);
             this.yPosition.TabIndex = 4;
@@ -153,7 +153,7 @@
             this.rgb_R.AutoSize = true;
             this.rgb_R.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rgb_R.ForeColor = System.Drawing.Color.Black;
-            this.rgb_R.Location = new System.Drawing.Point(23, 90);
+            this.rgb_R.Location = new System.Drawing.Point(14, 90);
             this.rgb_R.Name = "rgb_R";
             this.rgb_R.Size = new System.Drawing.Size(19, 17);
             this.rgb_R.TabIndex = 5;
@@ -164,7 +164,7 @@
             this.rgb_G.AutoSize = true;
             this.rgb_G.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rgb_G.ForeColor = System.Drawing.Color.Black;
-            this.rgb_G.Location = new System.Drawing.Point(23, 107);
+            this.rgb_G.Location = new System.Drawing.Point(14, 107);
             this.rgb_G.Name = "rgb_G";
             this.rgb_G.Size = new System.Drawing.Size(20, 17);
             this.rgb_G.TabIndex = 6;
@@ -175,7 +175,7 @@
             this.rgb_B.AutoSize = true;
             this.rgb_B.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rgb_B.ForeColor = System.Drawing.Color.Black;
-            this.rgb_B.Location = new System.Drawing.Point(24, 124);
+            this.rgb_B.Location = new System.Drawing.Point(15, 124);
             this.rgb_B.Name = "rgb_B";
             this.rgb_B.Size = new System.Drawing.Size(19, 17);
             this.rgb_B.TabIndex = 7;
@@ -186,7 +186,7 @@
             this.hexcode.AutoSize = true;
             this.hexcode.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hexcode.ForeColor = System.Drawing.Color.Black;
-            this.hexcode.Location = new System.Drawing.Point(116, 124);
+            this.hexcode.Location = new System.Drawing.Point(107, 124);
             this.hexcode.Name = "hexcode";
             this.hexcode.Size = new System.Drawing.Size(36, 17);
             this.hexcode.TabIndex = 8;
@@ -211,7 +211,7 @@
             this.selected_B.AutoSize = true;
             this.selected_B.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selected_B.ForeColor = System.Drawing.Color.Black;
-            this.selected_B.Location = new System.Drawing.Point(115, 348);
+            this.selected_B.Location = new System.Drawing.Point(115, 248);
             this.selected_B.Name = "selected_B";
             this.selected_B.Size = new System.Drawing.Size(19, 17);
             this.selected_B.TabIndex = 14;
@@ -222,7 +222,7 @@
             this.selected_G.AutoSize = true;
             this.selected_G.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selected_G.ForeColor = System.Drawing.Color.Black;
-            this.selected_G.Location = new System.Drawing.Point(115, 320);
+            this.selected_G.Location = new System.Drawing.Point(115, 220);
             this.selected_G.Name = "selected_G";
             this.selected_G.Size = new System.Drawing.Size(20, 17);
             this.selected_G.TabIndex = 13;
@@ -233,7 +233,7 @@
             this.selected_R.AutoSize = true;
             this.selected_R.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selected_R.ForeColor = System.Drawing.Color.Black;
-            this.selected_R.Location = new System.Drawing.Point(116, 288);
+            this.selected_R.Location = new System.Drawing.Point(116, 188);
             this.selected_R.Name = "selected_R";
             this.selected_R.Size = new System.Drawing.Size(19, 17);
             this.selected_R.TabIndex = 12;
@@ -244,7 +244,7 @@
             this.copyright.AutoSize = true;
             this.copyright.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyright.ForeColor = System.Drawing.Color.DarkGray;
-            this.copyright.Location = new System.Drawing.Point(3, 412);
+            this.copyright.Location = new System.Drawing.Point(3, 268);
             this.copyright.Name = "copyright";
             this.copyright.Size = new System.Drawing.Size(99, 17);
             this.copyright.TabIndex = 22;
@@ -257,6 +257,8 @@
             this.copy_color.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.copy_color.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.copy_color.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.copy_color.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.copy_color.FillColor2 = System.Drawing.Color.CornflowerBlue;
             this.copy_color.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.copy_color.ForeColor = System.Drawing.Color.White;
             this.copy_color.Location = new System.Drawing.Point(317, 144);
@@ -269,7 +271,7 @@
             // 
             // rScroll
             // 
-            this.rScroll.Location = new System.Drawing.Point(172, 280);
+            this.rScroll.Location = new System.Drawing.Point(172, 180);
             this.rScroll.Margin = new System.Windows.Forms.Padding(2);
             this.rScroll.Name = "rScroll";
             this.rScroll.Size = new System.Drawing.Size(347, 38);
@@ -279,7 +281,7 @@
             // 
             // gScroll
             // 
-            this.gScroll.Location = new System.Drawing.Point(171, 309);
+            this.gScroll.Location = new System.Drawing.Point(171, 209);
             this.gScroll.Margin = new System.Windows.Forms.Padding(2);
             this.gScroll.Name = "gScroll";
             this.gScroll.Size = new System.Drawing.Size(347, 40);
@@ -289,7 +291,7 @@
             // 
             // bScroll
             // 
-            this.bScroll.Location = new System.Drawing.Point(172, 340);
+            this.bScroll.Location = new System.Drawing.Point(172, 240);
             this.bScroll.Margin = new System.Windows.Forms.Padding(2);
             this.bScroll.Name = "bScroll";
             this.bScroll.Size = new System.Drawing.Size(347, 36);
@@ -371,7 +373,7 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 20);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(530, 430);
+            this.mainPanel.Size = new System.Drawing.Size(530, 295);
             this.mainPanel.TabIndex = 28;
             // 
             // colorFormatCombo
@@ -384,10 +386,9 @@
             this.colorFormatCombo.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.colorFormatCombo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.colorFormatCombo.ItemHeight = 30;
-            this.colorFormatCombo.Location = new System.Drawing.Point(23, 144);
+            this.colorFormatCombo.Location = new System.Drawing.Point(14, 144);
             this.colorFormatCombo.Name = "colorFormatCombo";
             this.colorFormatCombo.Size = new System.Drawing.Size(143, 36);
-            this.colorFormatCombo.StartIndex = 0;
             this.colorFormatCombo.TabIndex = 28;
             this.colorFormatCombo.SelectedIndexChanged += new System.EventHandler(this.colorFormatCombo_SelectedIndexChanged);
             // 
@@ -413,7 +414,7 @@
             // 
             // screen_color
             // 
-            this.screen_color.Location = new System.Drawing.Point(23, 36);
+            this.screen_color.Location = new System.Drawing.Point(14, 36);
             this.screen_color.Name = "screen_color";
             this.screen_color.Size = new System.Drawing.Size(143, 50);
             this.screen_color.TabIndex = 2;
@@ -431,7 +432,7 @@
             // 
             // selected_color
             // 
-            this.selected_color.Location = new System.Drawing.Point(14, 288);
+            this.selected_color.Location = new System.Drawing.Point(14, 188);
             this.selected_color.Name = "selected_color";
             this.selected_color.Size = new System.Drawing.Size(100, 77);
             this.selected_color.TabIndex = 11;
@@ -443,7 +444,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(530, 450);
+            this.ClientSize = new System.Drawing.Size(530, 315);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.controlPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
