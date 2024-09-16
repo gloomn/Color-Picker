@@ -1,11 +1,12 @@
 # Color Picker
+![제목을-입력해주세요_-001 (3)](https://github.com/user-attachments/assets/67a07239-f15f-44c9-8332-6f204ec06cfa)
 ![GitHub](https://img.shields.io/badge/developer-gloomn-blue)
 ![GitHub](https://img.shields.io/github/license/gloomn/Color-Picker)
 ![GitHub](https://img.shields.io/github/languages/top/gloomn/Color-Picker)
 ![GitHub](https://img.shields.io/github/languages/code-size/gloomn/Color-Picker)
 ---
  C# Windows Form으로 작성된 색 추출 프로그램
- 
+ #토이 프로젝트
  ---
  ### Features
  * This project used ```Bitmap``` and ```Graphics.CopyFromScreen``` to capture the screen live
